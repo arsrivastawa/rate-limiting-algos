@@ -1,9 +1,10 @@
 const express = require("express");
-const RateLimiter = require("./rateLimiter");
+const FixedWindowRateLimiter = require("./fixedWindowRateLimiter");
+const SlidingWindowRateLimiter = require("./slidingWindowRateLimiter");
 
 const app = express();
 
-const rateLimiter = new RateLimiter(10, 60);
+const rateLimiter = new SlidingWindowRateLimiter(5, 30);
 
 app.get("/", rateLimiter.interceptor, (req, res) => {
   res.send("Hello, World!");

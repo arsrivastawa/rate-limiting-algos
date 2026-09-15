@@ -1,4 +1,4 @@
-class RateLimiter {
+class FixedWindowRateLimiter {
   maxRequest;
   reqCount;
   timeWindow;
@@ -15,6 +15,10 @@ class RateLimiter {
 
   interceptor = (req, res, next) => {
     let currTime = Date.now();
+
+    let ccg = []
+
+    ccg.
 
     console.log(this.maxRequest);
     console.log(this.reqCount);
@@ -40,4 +44,4 @@ class RateLimiter {
   };
 }
 
-module.exports = RateLimiter;
+module.exports = FixedWindowRateLimiter;
