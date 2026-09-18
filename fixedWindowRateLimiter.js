@@ -18,7 +18,7 @@ class FixedWindowRateLimiter {
 
     let ccg = []
 
-    ccg.
+    // ccg.
 
     console.log(this.maxRequest);
     console.log(this.reqCount);
